@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="FITZONE - Your ultimate destination for premium fitness gear, expert workout tips, and personalized fitness planning. Start your transformation today.">
+    <title>FITZONE — Transform Your Body. Transform Your Life.</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+
+<body>
+
+    <!-- ==================== LOADER ==================== -->
+    <div id="loader" class="loader">
+        <div class="loader-inner">
+            <div class="loader-ring"></div>
+            <span class="loader-text">FITZONE</span>
+        </div>
+    </div>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-fit">FIT</span><span class="logo-zone">ZONE</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+                <li><a href="#shopping" class="nav-link" data-section="shopping">Shopping</a></li>
+                <li><a href="#tips" class="nav-link" data-section="tips">Fitness Tips</a></li>
+                <li><a href="#bmi" class="nav-link" data-section="bmi">BMI Calculator</a></li>
+                <li><a href="#planner" class="nav-link" data-section="planner">Workout Planner</a></li>
+                <li><a href="#testimonials" class="nav-link" data-section="testimonials">Testimonials</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+                    <i data-lucide="moon" class="theme-icon-dark"></i>
+                    <i data-lucide="sun" class="theme-icon-light"></i>
+                </button>
+                <button id="cartBtn" class="cart-btn" aria-label="Shopping cart">
+                    <i data-lucide="shopping-cart"></i>
+                    <span id="cartCount" class="cart-count">0</span>
+                </button>
+                <button id="hamburger" class="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <img src="images/hero-bg.png" alt="Athletic person training in premium gym" class="hero-bg-img">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-particles" id="heroParticles"></div>
+        <div class="hero-content">
+            <div class="hero-badge reveal-up">
+                <i data-lucide="zap"></i>
+                <span>THE FUTURE OF FITNESS</span>
+            </div>
+            <h1 class="hero-title reveal-up">
+                TRANSFORM YOUR BODY.<br>
+                <span class="hero-gradient-text">TRANSFORM YOUR LIFE.</span>
+            </h1>
+            <p class="hero-subtitle reveal-up">Join thousands of athletes who've elevated their training with premium
+                gear and expert-crafted workout programs. Your journey to greatness starts here.</p>
+            <div class="hero-ctas reveal-up">
+                <a href="#shopping" class="btn btn-primary btn-glow">
+                    <i data-lucide="shopping-bag"></i>
+                    Explore Fitness Shopping
+                </a>
+                <a href="#tips" class="btn btn-outline">
+                    <i data-lucide="lightbulb"></i>
+                    Get Fitness Tips
+                </a>
+            </div>
+            <div class="hero-stats reveal-up">
+                <div class="hero-stat">
+                    <span class="hero-stat-number">50K+</span>
+                    <span class="hero-stat-label">Active Members</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">200+</span>
+                    <span class="hero-stat-label">Expert Trainers</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">4.9★</span>
+                    <span class="hero-stat-label">User Rating</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span>Scroll Down</span>
+            <div class="scroll-arrow">
+                <i data-lucide="chevrons-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SHOPPING SECTION ==================== -->
+    <section id="shopping" class="section shopping-section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag"><i data-lucide="shopping-bag"></i> Premium Gear</span>
+                <h2 class="section-title">Fitness <span class="gradient-text">Shopping</span></h2>
+                <p class="section-subtitle">Handpicked premium equipment to power your workouts. Quality gear that
+                    matches your ambition.</p>
+            </div>
+            <div class="shop-controls reveal-up">
+                <div class="search-bar">
+                    <i data-lucide="search"></i>
+                    <input type="text" id="productSearch" placeholder="Search products..." autocomplete="off">
+                </div>
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-category="all">All</button>
+                    <button class="filter-tab" data-category="strength">Strength</button>
+                    <button class="filter-tab" data-category="cardio">Cardio</button>
+                    <button class="filter-tab" data-category="flexibility">Flexibility</button>
+                    <button class="filter-tab" data-category="accessories">Accessories</button>
+                </div>
+            </div>
+            <div class="products-grid" id="productsGrid"></div>
+        </div>
+    </section>
+
+    <!-- ==================== FITNESS TIPS SECTION ==================== -->
+    <section id="tips" class="section tips-section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag"><i data-lucide="lightbulb"></i> Expert Guidance</span>
+                <h2 class="section-title">Fitness <span class="gradient-text">Tips & Guidance</span></h2>
+                <p class="section-subtitle">Unlock expert knowledge to supercharge your fitness journey. From beginner
+                    basics to advanced strategies.</p>
+            </div>
+            <div class="tips-grid" id="tipsGrid"></div>
+        </div>
+    </section>
+
+    <!-- ==================== BMI CALCULATOR ==================== -->
+    <section id="bmi" class="section bmi-section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag"><i data-lucide="calculator"></i> Health Check</span>
+                <h2 class="section-title">BMI <span class="gradient-text">Calculator</span></h2>
+                <p class="section-subtitle">Know your body. Understand your numbers. Get personalized insights for your
+                    fitness journey.</p>
+            </div>
+            <div class="bmi-wrapper reveal-up">
+                <div class="bmi-card glass-card">
+                    <div class="bmi-inputs">
+                        <div class="bmi-input-group">
+                            <label for="bmiHeight">Height (cm)</label>
+                            <div class="input-wrapper">
+                                <i data-lucide="ruler"></i>
+                                <input type="number" id="bmiHeight" placeholder="e.g., 175" min="50" max="300">
+                            </div>
+                        </div>
+                        <div class="bmi-input-group">
+                            <label for="bmiWeight">Weight (kg)</label>
+                            <div class="input-wrapper">
+                                <i data-lucide="weight"></i>
+                                <input type="number" id="bmiWeight" placeholder="e.g., 70" min="10" max="500">
+                            </div>
+                        </div>
+                        <button id="calcBmi" class="btn btn-primary btn-glow btn-full">
+                            <i data-lucide="activity"></i>
+                            Calculate BMI
+                        </button>
+                    </div>
+                    <div class="bmi-result" id="bmiResult">
+                        <div class="bmi-gauge">
+                            <div class="bmi-gauge-bar">
+                                <div class="bmi-gauge-fill" id="bmiGaugeFill"></div>
+                                <div class="bmi-gauge-indicator" id="bmiGaugeIndicator"></div>
+                            </div>
+                            <div class="bmi-gauge-labels">
+                                <span>Underweight</span>
+                                <span>Normal</span>
+                                <span>Overweight</span>
+                                <span>Obese</span>
+                            </div>
+                        </div>
+                        <div class="bmi-value-display">
+                            <span class="bmi-number" id="bmiNumber">--</span>
+                            <span class="bmi-category" id="bmiCategory">Enter your details</span>
+                        </div>
+                        <div class="bmi-suggestion" id="bmiSuggestion">
+                            <p>Enter your height and weight to receive personalized health insights and recommendations.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== WORKOUT PLANNER ==================== -->
+    <section id="planner" class="section planner-section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag"><i data-lucide="clipboard-list"></i> Your Plan</span>
+                <h2 class="section-title">Workout <span class="gradient-text">Planner</span></h2>
+                <p class="section-subtitle">Select your goal and get a tailored weekly workout plan designed by expert
+                    trainers.</p>
+            </div>
+            <div class="planner-wrapper reveal-up">
+                <div class="goal-cards">
+                    <div class="goal-card" data-goal="weightloss">
+                        <div class="goal-icon" style="background: var(--gradient-primary);"><i data-lucide="flame"></i>
+                        </div>
+                        <h3>Weight Loss</h3>
+                        <p>Burn fat and get lean with high-intensity workouts</p>
+                    </div>
+                    <div class="goal-card" data-goal="musclegain">
+                        <div class="goal-icon" style="background: var(--gradient-primary);"><i
+                                data-lucide="dumbbell"></i></div>
+                        <h3>Muscle Gain</h3>
+                        <p>Build strength and mass with progressive overload</p>
+                    </div>
+                    <div class="goal-card" data-goal="generalfitness">
+                        <div class="goal-icon" style="background: var(--gradient-primary);"><i
+                                data-lucide="heart-pulse"></i></div>
+                        <h3>General Fitness</h3>
+                        <p>Improve overall health, flexibility, and endurance</p>
+                    </div>
+                </div>
+                <div class="workout-plan-display" id="workoutPlanDisplay">
+                    <div class="plan-placeholder">
+                        <i data-lucide="target"></i>
+                        <p>Select a fitness goal above to generate your personalized workout plan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== STATS SECTION ==================== -->
+    <section id="stats" class="section stats-section">
+        <div class="stats-bg-pattern"></div>
+        <div class="container">
+            <div class="stats-grid reveal-up">
+                <div class="stat-card">
+                    <div class="stat-icon"><i data-lucide="users"></i></div>
+                    <div class="stat-number" data-target="50000">0</div>
+                    <div class="stat-label">Members Joined</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i data-lucide="dumbbell"></i></div>
+                    <div class="stat-number" data-target="1200000">0</div>
+                    <div class="stat-label">Workouts Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i data-lucide="trophy"></i></div>
+                    <div class="stat-number" data-target="15000">0</div>
+                    <div class="stat-label">Success Stories</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i data-lucide="package"></i></div>
+                    <div class="stat-number" data-target="85000">0</div>
+                    <div class="stat-label">Products Sold</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section id="testimonials" class="section testimonials-section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag"><i data-lucide="message-circle"></i> Real Stories</span>
+                <h2 class="section-title">What Our <span class="gradient-text">Members Say</span></h2>
+                <p class="section-subtitle">Hear from real people who transformed their lives with FITZONE.</p>
+            </div>
+            <div class="testimonials-grid reveal-up">
+                <div class="testimonial-card glass-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"FITZONE completely changed my life. I lost 30 pounds in 4 months and
+                        feel stronger than ever. The equipment quality is outstanding and the workout plans are
+                        incredibly effective."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=100&h=100&fit=crop&crop=face"
+                                alt="Arjun Reddy">
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Arjun Reddy</h4>
+                            <span>Lost 30 lbs in 4 months</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-card featured">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"The fitness tips section alone is worth it. As a beginner, I was lost,
+                        but FITZONE gave me a clear roadmap. Now I'm running marathons! The community support is
+                        incredible."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face"
+                                alt="Sarah Kim">
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Sarah Kim</h4>
+                            <span>Completed 3 marathons</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Best fitness gear I've ever purchased. Premium quality at fair prices.
+                        The workout planner keeps me on track and the BMI calculator helped me set realistic goals."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=face"
+                                alt="Marcus Peters">
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Marcus Peters</h4>
+                            <span>Gained 20 lbs muscle</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"From couch potato to fitness enthusiast! FITZONE's step-by-step
+                        guidance made the impossible feel achievable. I've never been more confident in my own skin."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face"
+                                alt="Lisa Patel">
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Lisa Patel</h4>
+                            <span>Total body transformation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag"><i data-lucide="mail"></i> Get In Touch</span>
+                <h2 class="section-title">Contact <span class="gradient-text">Us</span></h2>
+                <p class="section-subtitle">Have questions? Want to partner with us? We'd love to hear from you.</p>
+            </div>
+            <div class="contact-wrapper reveal-up">
+                <div class="contact-info">
+                    <div class="contact-info-card glass-card">
+                        <i data-lucide="map-pin"></i>
+                        <div>
+                            <h4>Visit Us</h4>
+                            <p>123 Fitness Avenue, Muscle City, FC 90210</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card glass-card">
+                        <i data-lucide="phone"></i>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p>+1 (800) FIT-ZONE</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card glass-card">
+                        <i data-lucide="mail"></i>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>hello@fitzone.com</p>
+                        </div>
+                    </div>
+                </div>
+                <form id="contactForm" class="contact-form glass-card">
+                    <div class="form-group">
+                        <label for="contactName">Your Name</label>
+                        <div class="input-wrapper">
+                            <i data-lucide="user"></i>
+                            <input type="text" id="contactName" placeholder="John Doe" required>
+                        </div>
+                        <span class="form-error" id="nameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Your Email</label>
+                        <div class="input-wrapper">
+                            <i data-lucide="at-sign"></i>
+                            <input type="email" id="contactEmail" placeholder="john@example.com" required>
+                        </div>
+                        <span class="form-error" id="emailError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Your Message</label>
+                        <div class="input-wrapper textarea-wrapper">
+                            <i data-lucide="message-square"></i>
+                            <textarea id="contactMessage" placeholder="Tell us how we can help..." rows="5"
+                                required></textarea>
+                        </div>
+                        <span class="form-error" id="messageError"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-glow btn-full">
+                        <i data-lucide="send"></i>
+                        Send Message
+                    </button>
+                    <div class="form-success" id="formSuccess">
+                        <i data-lucide="check-circle"></i>
+                        <p>Message sent successfully! We'll get back to you within 24 hours.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer-glow"></div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#home" class="nav-logo">
+                        <span class="logo-fit">FIT</span><span class="logo-zone">ZONE</span>
+                    </a>
+                    <p class="footer-tagline">"The only bad workout is the one that didn't happen."</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-link" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="social-link" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#shopping">Shop</a></li>
+                        <li><a href="#tips">Fitness Tips</a></li>
+                        <li><a href="#bmi">BMI Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#planner">Workout Plans</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Stay Motivated</h4>
+                    <p>Get weekly fitness tips and exclusive deals.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Your email address">
+                        <button class="btn btn-primary"><i data-lucide="arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FITZONE. All rights reserved. Built with 💪 and dedication.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== BACK TO TOP ==================== -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+    <!-- ==================== CART MODAL ==================== -->
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-modal-overlay"></div>
+        <div class="cart-modal-content glass-card">
+            <div class="cart-modal-header">
+                <h3><i data-lucide="shopping-cart"></i> Your Cart</h3>
+                <button id="closeCart" class="cart-close"><i data-lucide="x"></i></button>
+            </div>
+            <div class="cart-modal-body" id="cartItems">
+                <div class="cart-empty">
+                    <i data-lucide="shopping-bag"></i>
+                    <p>Your cart is empty</p>
+                </div>
+            </div>
+            <div class="cart-modal-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">$0.00</span>
+                </div>
+                <button class="btn btn-primary btn-glow btn-full">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <i data-lucide="check-circle"></i>
+        <span id="toastMessage">Item added to cart!</span>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
