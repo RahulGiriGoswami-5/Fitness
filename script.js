@@ -630,6 +630,25 @@ function calculateBMI() {
     // Animate number
     const numberEl = document.getElementById('bmiNumber');
     animateValue(numberEl, 0, parseFloat(bmiRounded), 800);
+
+    supabaseClient
+        .from("bmi_records")
+        .insert([
+            {
+                height: height,
+                weight: weight,
+                bmi: parseFloat(bmiRounded)
+            }
+        ])
+        .then(({ error }) => {
+            if (error) {
+                console.error(error);
+            } else {
+                console.log("BMI saved successfully!");
+            }
+        });
+
+
 }
 
 function animateValue(element, start, end, duration) {
