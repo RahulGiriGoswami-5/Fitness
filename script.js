@@ -386,8 +386,26 @@ function addToCart(productId) {
     const existing = cart.find(item => item.id === productId);
     if (existing) {
         existing.qty += 1;
-    } else {
+    }
+    else {
         cart.push({ ...product, qty: 1 });
+
+        supabaseClient
+            .from("cart_items")
+            .insert([
+                {
+                    product_name: product.name,
+                    price: product.price,
+                    quantity: 1
+                }
+            ])
+            .then(({ error }) => {
+                if (error) {
+                    console.error(error);
+                } else {
+                    console.log("Cart item saved!");
+                }
+            });
     }
 
     updateCartUI();
