@@ -950,7 +950,7 @@ async function checkUser() {
     if (user) {
 
         loginBtn.innerHTML =
-            `<i data-lucide="user"></i> Hello, ${user.email}`;
+            `<i data-lucide="user"></i> ${user.email.split("@")[0]}`;
         logoutBtn.style.display = "inline-block";
 
         logoutBtn.onclick = async () => {
@@ -966,7 +966,7 @@ async function checkUser() {
 
     } else {
         loginBtn.innerHTML =
-            `<i data-lucide="user"></i> Hello, ${user.email}`;
+            `<i data-lucide="user"></i> Login`;
 
         logoutBtn.style.display = "inline-block";
 

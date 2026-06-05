@@ -2488,3 +2488,25 @@ body::after {
     cursor: pointer;
     font-size: 28px;
 }
+
+#loginBtn {
+    max-width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#logoutBtn {
+    padding: 14px 24px;
+}
+
+#loginBtn {
+    max-width: 160px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#logoutBtn {
+    padding: 14px 24px;
+}
