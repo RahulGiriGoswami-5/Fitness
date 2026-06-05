@@ -933,5 +933,27 @@ signinBtn.addEventListener("click", async () => {
     } else {
         alert("Login successful!");
         authModal.style.display = "none";
+
+        checkUser();
+
     }
 });
+// ================= CURRENT USER =================
+
+async function checkUser() {
+
+    const {
+        data: { user }
+    } = await supabaseClient.auth.getUser();
+
+    if (user) {
+        loginBtn.innerHTML =
+            `<i data-lucide="user"></i> ${user.email}`;
+
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+    }
+}
+
+checkUser();
