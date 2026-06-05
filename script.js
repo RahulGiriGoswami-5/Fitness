@@ -873,3 +873,65 @@ contactForm.addEventListener("submit", async (e) => {
     }
 
 });
+// ================= AUTH MODAL =================
+
+const loginBtn = document.getElementById("loginBtn");
+const authModal = document.getElementById("authModal");
+const closeAuth = document.getElementById("closeAuth");
+
+loginBtn.addEventListener("click", () => {
+    authModal.style.display = "flex";
+});
+
+closeAuth.addEventListener("click", () => {
+    authModal.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+    if (e.target === authModal) {
+        authModal.style.display = "none";
+    }
+});
+console.log("Auth JS Loaded");
+// ================= SUPABASE AUTH =================
+
+const signupBtn = document.getElementById("signupBtn");
+const signinBtn = document.getElementById("signinBtn");
+const authEmail = document.getElementById("authEmail");
+const authPassword = document.getElementById("authPassword");
+
+// Sign Up
+signupBtn.addEventListener("click", async () => {
+    const email = authEmail.value;
+    const password = authPassword.value;
+
+    const { error } = await supabaseClient.auth.signUp({
+        email: email,
+        password: password
+    });
+
+    if (error) {
+        alert(error.message);
+    } else {
+        alert("Account created successfully!");
+        authModal.style.display = "none";
+    }
+});
+
+// Login
+signinBtn.addEventListener("click", async () => {
+    const email = authEmail.value;
+    const password = authPassword.value;
+
+    const { error } = await supabaseClient.auth.signInWithPassword({
+        email: email,
+        password: password
+    });
+
+    if (error) {
+        alert(error.message);
+    } else {
+        alert("Login successful!");
+        authModal.style.display = "none";
+    }
+});

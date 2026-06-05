@@ -52,6 +52,10 @@
                     <i data-lucide="shopping-cart"></i>
                     <span id="cartCount" class="cart-count">0</span>
                 </button>
+                <button id="loginBtn" class="btn btn-primary btn-glow auth-btn">
+                    <i data-lucide="user"></i>
+                    Login
+                </button>
                 <button id="hamburger" class="hamburger" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
@@ -511,10 +515,38 @@
         <i data-lucide="check-circle"></i>
         <span id="toastMessage">Item added to cart!</span>
     </div>
+    <div id="authModal" class="auth-modal">
+        <div class="auth-box glass-card">
+            <span id="closeAuth" class="close-auth">&times;</span>
+
+            <h2>Welcome to FitZone</h2>
+            <p>Login or create your account</p>
+
+            <div class="form-group">
+                <input type="email" id="authEmail" placeholder="Enter your email">
+            </div>
+
+            <div class="form-group">
+                <input type="password" id="authPassword" placeholder="Enter your password">
+            </div>
+
+            <div class="auth-buttons">
+                <button id="signupBtn" class="btn btn-primary btn-glow">
+                    Sign Up
+                </button>
+
+                <button id="signinBtn" class="btn btn-secondary">
+                    Login
+                </button>
+            </div>
+        </div>
+    </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
+    <!-- Authentication Modal -->
+
 </body>
 
 </html>
