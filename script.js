@@ -878,6 +878,7 @@ contactForm.addEventListener("submit", async (e) => {
 const loginBtn = document.getElementById("loginBtn");
 const authModal = document.getElementById("authModal");
 const closeAuth = document.getElementById("closeAuth");
+const logoutBtn = document.getElementById("logoutBtn");
 
 loginBtn.addEventListener("click", () => {
     authModal.style.display = "flex";
@@ -947,8 +948,33 @@ async function checkUser() {
     } = await supabaseClient.auth.getUser();
 
     if (user) {
+
         loginBtn.innerHTML =
-            `<i data-lucide="user"></i> ${user.email}`;
+            `<i data-lucide="user"></i> Hello, ${user.email}`;
+        logoutBtn.style.display = "inline-block";
+
+        logoutBtn.onclick = async () => {
+            await supabaseClient.auth.signOut();
+
+            alert("Logged out successfully!");
+            location.reload();
+        };
+
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+
+    } else {
+        loginBtn.innerHTML =
+            `<i data-lucide="user"></i> Hello, ${user.email}`;
+
+        logoutBtn.style.display = "inline-block";
+
+
+        loginBtn.onclick = () => {
+            authModal.style.display = "flex";
+        };
+        logoutBtn.style.display = "none";
 
         if (window.lucide) {
             lucide.createIcons();
